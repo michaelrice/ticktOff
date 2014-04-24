@@ -1,4 +1,6 @@
 *.iws
+*~
+*.swp
 *Db.properties
 *Db.script
 .settings
