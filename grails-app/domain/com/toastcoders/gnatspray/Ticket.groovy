@@ -18,14 +18,14 @@ class Ticket {
     int percentComplete
     boolean isPrivate = false
     Ticket parent
-    String closureComment
-    String detailedDescription
+    SortedSet comments
 
     static belongsTo = [queue: Queue]
 
     static hasMany = [
         children: Ticket,
         relatives: Ticket,
+        comments: Comment
     ]
 
     static constraints = {
@@ -33,6 +33,7 @@ class Ticket {
         dueDate    nullable: true
         closedBy   nullable: true
         parent     nullable: true
+        comments   minSize: 1
     }
 
     static mapping = {

@@ -1,6 +1,6 @@
 package com.toastcoders.gnatspray
 
-class Comment {
+class Comment implements Comparable {
 
     Date dateCreated
     Date lastUpdated
@@ -15,5 +15,9 @@ class Comment {
 
     static mapping = {
         comment type: 'text'
+    }
+
+    int compareTo(other) {
+        dateCreated.compareTo(other?.dateCreated)
     }
 }
