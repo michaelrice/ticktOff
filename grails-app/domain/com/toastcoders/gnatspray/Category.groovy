@@ -1,6 +1,6 @@
 package com.toastcoders.gnatspray
 
-class TaskType {
+class Category {
 
     String name
     int position
