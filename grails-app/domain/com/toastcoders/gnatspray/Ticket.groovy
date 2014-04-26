@@ -44,6 +44,16 @@ class Ticket {
         return (dateClosed != null)
     }
 
+    Boolean getMetDeadline() {
+        if (dateClosed) {
+            return (dateClosed < dueDate)
+        }
+        else {
+            // Hey, there's still time left! I'll get it done...
+            return null
+        }
+    }
+
     Duration getAge() {
         use(TimeCategory) {
             return (new Date() - dateCreated)
