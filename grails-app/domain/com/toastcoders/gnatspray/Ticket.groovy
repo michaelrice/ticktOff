@@ -12,8 +12,8 @@ class Ticket {
     User openedBy
     User closedBy
     Category category
-    TaskSeverity taskSeverity
-    TaskPriority taskPriority
+    Integer impact
+    Integer priority
     int percentComplete
     boolean isPrivate = false
     Ticket parent
@@ -32,6 +32,8 @@ class Ticket {
         dateClosed nullable: true
         dueDate    nullable: true
         closedBy   nullable: true
+        impact     range: 1..10
+        priority   range: 1..10
         parent     nullable: true
         comments   minSize: 1
     }
