@@ -11,7 +11,6 @@ class Ticket {
     Date dueDate
     User openedBy
     User closedBy
-    boolean isClosed = false
     TaskType taskType
     TaskSeverity taskSeverity
     TaskPriority taskPriority
@@ -39,6 +38,10 @@ class Ticket {
     static mapping = {
         closureComment type: 'text'
         detailedDescription type: 'text'
+    }
+
+    boolean getIsClosed() {
+        return (dateClosed != null)
     }
 
     Duration getAge() {
