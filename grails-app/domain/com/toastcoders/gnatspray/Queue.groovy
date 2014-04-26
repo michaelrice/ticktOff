@@ -11,6 +11,6 @@ class Queue {
     ]
 
     static constraints = {
-        name blank: false, unique: true, pattern: /[-\.a-zA-Z0-9]+/
+        name blank: false, unique: true, pattern: /[-\.a-zA-Z0-9 ]+/
     }
 }
