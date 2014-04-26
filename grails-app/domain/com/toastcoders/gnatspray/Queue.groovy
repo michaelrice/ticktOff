@@ -3,9 +3,11 @@ package com.toastcoders.gnatspray
 class Queue {
 
     String name
+    Collection tickets
     List categories
 
     static hasMany = [
+        tickets: Ticket,
         categories: Category,
         statuses: Status,
     ]
