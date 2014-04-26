@@ -1,5 +1,8 @@
 package com.toastcoders.gnatspray
 
+import groovy.time.Duration
+import groovy.time.TimeCategory
+
 class Ticket {
 
     Date dateCreated
@@ -35,5 +38,35 @@ class Ticket {
     static mapping = {
         closureComment type: 'text'
         detailedDescription type: 'text'
+    }
+
+    Duration getAge() {
+        use(TimeCategory) {
+            return (new Date() - dateCreated)
+        }
+    }
+
+    Duration getTimeToResolution() {
+        if (dateClosed) {
+            use(TimeCategory) {
+                return (new Date() - dateClosed)
+            }
+        }
+        else {
+            // Implies Ticket is unresolved.
+            return null
+        }
+    }
+
+    Duration getIdle() {
+        // A closed Ticket cannot be idle.
+        if (dateClosed) {
+            return null
+        }
+        else {
+            use(TimeCategory) {
+                return (new Date() - (lastUpdated ?: dateCreated))
+            }
+        }
     }
 }
