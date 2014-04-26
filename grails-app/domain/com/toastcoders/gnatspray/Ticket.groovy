@@ -10,6 +10,7 @@ class Ticket {
     Date dateClosed
     Date dueDate
     User openedBy
+    User assignee
     User closedBy
     Category category
     Integer impact
@@ -31,6 +32,7 @@ class Ticket {
     static constraints = {
         dateClosed nullable: true
         dueDate    nullable: true
+        assignee   nullable: true
         closedBy   nullable: true
         impact     range: 1..10
         priority   range: 1..10
