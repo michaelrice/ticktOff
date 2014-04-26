@@ -1,6 +1,6 @@
 package com.toastcoders.gnatspray
 
-class Task {
+class Ticket {
 
     Date dateCreated
     Date lastUpdated
