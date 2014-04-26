@@ -24,7 +24,8 @@ class Ticket {
     static hasMany = [
         children: Ticket,
         relatives: Ticket,
-        comments: Comment
+        comments: Comment,
+        watchers: User,
     ]
 
     static constraints = {
