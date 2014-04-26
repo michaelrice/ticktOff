@@ -11,7 +11,7 @@ class Ticket {
     Date dueDate
     User openedBy
     User closedBy
-    TaskType taskType
+    Category category
     TaskSeverity taskSeverity
     TaskPriority taskPriority
     int percentComplete
