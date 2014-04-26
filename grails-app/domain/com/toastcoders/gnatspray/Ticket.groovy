@@ -13,6 +13,7 @@ class Ticket {
     User assignee
     User closedBy
     Category category
+    Status status
     Integer impact
     Integer priority
     int percentComplete
