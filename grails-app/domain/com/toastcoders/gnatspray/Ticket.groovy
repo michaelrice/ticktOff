@@ -14,13 +14,22 @@ class Ticket {
     TaskPriority taskPriority
     int percentComplete
     boolean isPrivate = false
+    Ticket parent
     String closureComment
     String detailedDescription
 
     static belongsTo = [queue: Queue]
 
-    static constraints = {
+    static hasMany = [
+        children: Ticket,
+        relatives: Ticket,
+    ]
 
+    static constraints = {
+        dateClosed nullable: true
+        dueDate    nullable: true
+        closedBy   nullable: true
+        parent     nullable: true
     }
 
     static mapping = {
