@@ -6,6 +6,7 @@ class User {
 
 	String username
 	String password
+    String email
     String firstName
     String lastName
     String displayName
@@ -22,6 +23,7 @@ class User {
 	static constraints = {
 		username blank: false, unique: true
 		password blank: false
+        email    blank: false, unique: true, email: true
 	}
 
 	static mapping = {
