@@ -17,8 +17,7 @@ class Ticket {
     String closureComment
     String detailedDescription
 
-    static belongsTo =
-            [project:Project]
+    static belongsTo = [queue: Queue]
 
     static constraints = {
 
