@@ -3,7 +3,7 @@ package com.toastcoders.gnatspray
 class Category {
 
     String name
-    boolean showInList = true
+    Boolean hidden = false
 
     static belongsTo = [queue: Queue]
 
