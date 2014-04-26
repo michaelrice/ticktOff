@@ -5,6 +5,7 @@ class Queue {
     String name
     Collection tickets
     List categories
+    List statuses
 
     static hasMany = [
         tickets: Ticket,
