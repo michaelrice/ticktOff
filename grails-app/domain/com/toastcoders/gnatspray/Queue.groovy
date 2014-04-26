@@ -1,6 +1,6 @@
 package com.toastcoders.gnatspray
 
-class Project {
+class Queue {
 
     static constraints = {
     }
